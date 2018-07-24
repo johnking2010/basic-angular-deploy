@@ -14,14 +14,24 @@ export class AppComponent {
   constructor() {
     this.articles = [
       new Article('Angular 6', 'http://angular.io', 3),
-      new Article('Fullstack', 'http://fullatack.io', 2),
+      new Article('Fullstack', 'http://fullstack.io', 2),
       new Article('Angular Homepage', 'http://angular.io', 1)
     ];
   }
 
-
   addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
     console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+    this.articles.push(new Article(title.value, link.value, 0));
+    // clear input field values after adding new Article to array... 
+    // these are 'HTMLInputElement' objects!:
+    title.value = '';
+    link.value = '';
     return false;
   }
+  // old, inital, pre 'Article' Model's creation... :
+  // addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
+  //   console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+  //   return false;
+  // }
+
 }
