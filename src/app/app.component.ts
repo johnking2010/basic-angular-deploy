@@ -34,4 +34,8 @@ export class AppComponent {
   //   return false;
   // }
 
+  // sort by score:
+  sortedArticles(): Article[] {
+    return this.articles.sort( (a: Article, b: Article) => b.votes - a.votes);
+  }
 }

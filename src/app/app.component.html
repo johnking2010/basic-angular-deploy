@@ -21,7 +21,7 @@
 <!-- displaying linked articles: (using the 'article' component)-->
 <div class="ui grid posts">
   <app-article
-    *ngFor="let currentArticle of articles"
-    [article] ="currentArticle">
+    *ngFor="let singleArticle of sortedArticles()"
+    [article] ="singleArticle">
   </app-article>
 </div>
