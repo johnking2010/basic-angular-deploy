@@ -20,5 +20,8 @@
 
 <!-- displaying linked articles: (using the 'article' component)-->
 <div class="ui grid posts">
-  <app-article></app-article>
+  <app-article
+    *ngFor="let currentArticle of articles"
+    [article] ="currentArticle">
+  </app-article>
 </div>
