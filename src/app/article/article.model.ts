@@ -30,6 +30,7 @@ export class Article {
             const domainAndPath: string = this.link.split('//')[1];
             // e.g. yields: foo.com/path/to/bar
             return domainAndPath.split('/')[0];
+            // e.g.: yields foo.com
         } catch (err) {
             return null;
         }

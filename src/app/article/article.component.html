@@ -15,6 +15,10 @@
   <a class="ui large header" href="{{ article.link }}">
     {{ article.title }}
   </a>
+  <!-- show just the DOMAIN: -->
+  <div class="meta"> ( {{ article.domain() }} ) </div>
+  
+  <!-- up/down vote: -->
   <ul class="ui big horizontal list voters">
     <li class="item">
       <a href (click)="voteUp()">
