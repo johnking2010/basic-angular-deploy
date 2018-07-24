@@ -22,7 +22,11 @@ export class ArticleComponent implements OnInit {
   }
 
   voteUp() {
-    this.article.votes += 1;
+    // increment votes... 
+    //[this way is BAD PRACTICE, component is directly modifying the Article's internal properties directly!]
+    /*this.article.votes += 1;*/
+
+    this.article.voteUp();
 
     return false
     // *** ABOVE line added to PREVENT the browser from PROPAGATING events upwards!
@@ -30,8 +34,8 @@ export class ArticleComponent implements OnInit {
   }
 
   voteDown() {
-    this.article.votes -= 1;
-
+    // decrement votes...
+    this.article.voteDown();
     return false
   } 
 
